@@ -1,0 +1,10 @@
+h1{
+    color: gray;
+    text-align: center;
+}
+
+img{
+    display: block;
+    border-radius: 12px;
+    margin: 20px auto;
+}
