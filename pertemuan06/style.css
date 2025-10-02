@@ -1,0 +1,29 @@
+h1{
+    color: blue;
+    text-align: center;
+}
+
+h1.judul:hover{
+    color:pink;
+    font-size: 100px;
+}
+
+
+
+/* 
+
+
+.judul{
+    color: blue;
+    text-align: center;
+    font-size: 60px;
+}
+
+#paragraph2{
+    color: green;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+ */
