@@ -1,0 +1,20 @@
+.konten{
+    background-color:grey ;
+    width: 200px;
+    height: 200px;
+    /* margin-top: 100px;  
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 100px; */
+    margin: 100px ;
+    /* padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 35px;
+    padding-bottom: 30px; */
+    padding: 10px 35px 30px 20px ;
+    font-family:Arial, Helvetica, sans-serif;
+    background-image: url("https://image.idntimes.com/post/20230329/22969644e29344d0a17a35a80077c683-322726093-534367905095250-4247679569658764764-n-b9c7fac7543a061202919ad3b742ab1f-6c5c897eed3af9cd27676c334387d080.jpg");
+    background-repeat: repeat;
+
+}
+

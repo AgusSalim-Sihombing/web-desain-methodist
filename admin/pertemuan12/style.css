@@ -1,0 +1,205 @@
+/* Reset dan Base */
+* {
+    margin: 0; /* Margin shorthand: reset semua margin ke 0 */
+    padding: 0;
+    /* box-sizing: border-box; */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navbar - Contoh Margin Shorthand dan Individual */
+.navbar {
+    background-color: #333;
+    color: white;
+    padding: 15px 5% 15px 5%; /* Padding shorthand: top/bottom 15px, left/right 5% */
+    border-bottom: 3px solid #fff; /* Border: width 3px, style solid, color white */
+    border-radius: 0 0 15px 15px; /* Border-radius: sudut kiri atas/bawah 0, kanan atas/bawah 15px */
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto 0 2%; /* Margin individual: top 0, right auto, bottom 0, left 2% - untuk offset ringan */
+    max-width: 1200px;
+    width: 100%;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-right: 30px; /* Margin individual: hanya right 30px untuk jarak antar link */
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px; /* Padding individual: top/bottom 10px, left/right 15px */
+    border: 1px dashed #ccc; /* Border: width 1px, style dashed, color abu-abu */
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+.nav-links a:hover {
+    border-color: #4CAF50; /* Hover effect pada border color */
+}
+
+/* Hero Section - Contoh Margin Auto dan Negatif */
+.hero {
+    padding: 80px 10% 50px 10%; /* Padding: top 80px, right/left 10%, bottom 50px */
+    text-align: center;
+    margin-top: -20px; /* Margin negatif top: overlap sedikit dengan navbar untuk efek seamless */
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto; /* Margin auto: centering horizontal penuh */
+}
+
+.profile-img {
+    width: 200px;
+    height: 200px;
+    border: 5px double #4CAF50; /* Border: width 5px, style double, color hijau */
+    border-radius: 50%; /* Border-radius bulat penuh untuk lingkaran */
+    margin-bottom: 20px; /* Margin individual bottom: jarak ke teks di bawah */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin: 20px 15% 10px 15%; /* Margin shorthand: top 20px, right 15%, bottom 10px, left 15% */
+    border-left: 4px solid #333; /* Border individual left: garis kiri tebal */
+    padding-left: 20px; /* Padding left untuk ruang dari border */
+}
+
+.cta-button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 15px 40px 15px 40px; /* Padding simetris: top 15px, right/left 40px, bottom 15px */
+    border-radius: 25px; /* Border-radius bulat */
+    cursor: pointer;
+    font-size: 1.1em;
+    margin-top: 25px; /* Margin top untuk jarak dari paragraf */
+    transition: transform 0.3s;
+}
+
+.cta-button:hover {
+    transform: scale(1.05); /* Animasi hover sederhana */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Bio Section - Contoh Border Individual dan Padding Shorthand */
+.bio-section {
+    background: white;
+    margin: 40px 10% 30px 10%; /* Margin: top 40px, right/left 10%, bottom 30px */
+    padding: 40px; /* Padding shorthand: semua sisi 40px */
+    border-top: 2px dotted #ff9800; /* Border top: dotted oranye */
+    border-right: 1px solid #2196F3; /* Border right: solid biru */
+    border-bottom: 3px dashed #9C27B0; /* Border bottom: dashed ungu */
+    border-left: 4px groove #4CAF50; /* Border left: groove hijau */
+    border-radius: 10px 20px 10px 20px; /* Border-radius asimetris: atas kiri 10px, atas kanan 20px, dll. */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.bio-section h2 {
+    text-align: center;
+    margin-bottom: 20px; /* Margin bottom saja */
+    padding-bottom: 10px; /* Padding bottom untuk garis bawah implisit */
+    border-bottom: 2px solid #333;
+}
+
+.bio-card {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.bio-list {
+    list-style: none;
+    padding-left: 20px; /* Padding left untuk indent */
+}
+
+.bio-list li {
+    margin-bottom: 10px; /* Margin bottom untuk jarak antar item */
+    padding: 5px 10px; /* Padding: top/bottom 5px, left/right 10px */
+    background: #f9f9f9;
+    border: 1px inset #ddd; /* Border style inset untuk efek 3D */
+    border-radius: 5px;
+}
+
+/* Skills Section - Contoh Grid dengan Margin dan Padding */
+.skills-section {
+    padding: 60px 5%; /* Padding: top/bottom 60px, left/right 5% */
+    margin: 0 15% 50px 15%; /* Margin: top 0, right/left 15%, bottom 50px */
+    background: rgba(255,255,255,0.8);
+    border-radius: 15px;
+    border: 2px outset #333; /* Border style outset untuk efek tombol */
+}
+
+.skills-section h2 {
+    text-align: center;
+    margin-bottom: 30px; /* Margin bottom */
+    padding: 0 0 15px 0; /* Padding hanya bottom */
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.skill-card {
+    background: #4CAF50;
+    color: white;
+    padding: 20px 10px; /* Padding: top/bottom 20px, left/right 10px */
+    text-align: center;
+    border: 2px solid white; /* Border putih tebal */
+    border-radius: 8px;
+    margin: 5px; /* Margin shorthand: semua sisi 5px untuk spacing ekstra */
+    transition: background 0.3s;
+}
+
+.skill-card:hover {
+    background: #45a049;
+    margin-left: -5px; /* Margin negatif left pada hover untuk efek shift */
+    border-color: #333;
+}
+
+/* Footer - Contoh Margin Auto dan Border Radius */
+.footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin: 0 auto; /* Margin auto untuk centering */
+    border-top-left-radius: 20px; /* Border-radius hanya sudut kiri atas */
+    border-top-right-radius: 20px; /* Sudut kanan atas */
+    width: 80%;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        margin: 10px auto; /* Margin auto pada mobile */
+    }
+    
+    .bio-card {
+        flex-direction: column;
+        padding: 20px; /* Padding lebih kecil di mobile */
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+        margin: 10px 0; /* Margin shorthand di mobile */
+    }
+}

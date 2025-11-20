@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Positioning & Backgrounds — Slides</title>
+    <style>
+        /* ---------- Base Slide Deck Styles ---------- */
+        :root {
+            --bg: #0f172a;
+            /* slate-900 */
+            --panel: #111827;
+            /* gray-900 */
+            --card: #111827;
+            --muted: #94a3b8;
+            /* slate-400 */
+            --text: #e5e7eb;
+            /* gray-200 */
+            --accent: #22d3ee;
+            /* cyan-400 */
+            --accent2: #a78bfa;
+            /* violet-400 */
+            --green: #34d399;
+            /* emerald-400 */
+            --red: #fb7185;
+            /* rose-400 */
+            --yellow: #facc15;
+            /* amber-400 */
+            --code: #0b1220;
+        }
+        html{
+            scroll-behavior: smooth;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            font: 16px/1.55 Inter, system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text);
+            background: radial-gradient(1200px 600px at 80% -20%, #1e293b 0%, var(--bg) 60%);
+        }
+
+        .deck {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 32px 20px 120px;
+        }
+
+        .nav {
+            position: fixed;
+            bottom: 24px;
+            left: 0;
+            right: 0;
+            display: flex;
+            gap:
+                12px;
+            justify-content: center;
+        }
+
+        .nav a {
+            background: var(--accent);
+            color: #0b1020;
+            text-decoration: none;
+            padding: 12px 18px;
+            border-radius: 999px;
+            font-weight: 700;
+            box-shadow: 0 10px 30px rgba(34, 211, 238, .25);
+        }
+
+        .nav a.secondary {
+            background: #1f2937;
+            color: #cbd5e1;
+            box-shadow: none;
+            border: 1px solid #2b3442;
+        }
+
+        1
+
+        /* Slides via :target (no JS) */
+        .slide {
+            display: none;
+            background: linear-gradient(180deg, rgba(255, 255,
+                        255, .03), rgba(255, 255, 255, .01));
+            border: 1px solid #223044;
+            border-radius:
+                18px;
+            padding: 28px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, .35);
+            min-height: 60vh;
+        }
+
+        .slide:target {
+            display: block;
+        }
+
+        .slide h1,
+        .slide h2 {
+            margin: 0 0 12px
+        }
+
+        .slide h1 {
+            font-size: 42px
+        }
+
+        .slide h2 {
+            font-size: 28px;
+            color: #dbeafe
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 10px;
+            border-radius: 999px;
+            fontweight: 700;
+            background: rgba(167, 139, 250, .15);
+            color: var(--accent2);
+            border:
+                1px solid rgba(167, 139, 250, .35)
+        }
+
+        .two {
+            display: grid;
+            grid-template-columns: 1.2fr .8fr;
+            gap: 18px;
+            alignitems: start
+        }
+
+        .card {
+            background: rgba(15, 23, 42, .55);
+            border: 1px solid #223044;
+            borderradius: 14px;
+            padding: 16px
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap:
+                14px
+        }
+
+        pre {
+            background: var(--code);
+            color: #e2e8f0;
+            padding: 14px;
+            border-radius:
+                12px;
+            overflow: auto;
+            border: 1px solid #1f2937
+        }
+
+        code {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+                "Liberation Mono", "Courier New", monospace
+        }
+
+        ul {
+            margin-top: 8px
+        }
+
+        .demo-area {
+            position: relative;
+            min-height: 180px;
+            background: #0b1220;
+            border: 1px dashed #334155;
+            border-radius: 12px;
+            display: grid;
+            placeitems: center;
+            color: #cbd5e1
+        }
+
+        .box {
+            padding: 10px 14px;
+            border-radius: 10px;
+            background: #1f2937;
+            border:
+                1px solid #334155
+        }
+
+        /* Tiny helper for highlighting */
+        mark {
+            background: rgba(250, 204, 21, .2);
+            color: #fde68a;
+            padding: 2px 6px;
+            border-radius: 6px
+        }
+
+        /* Default visible slide if no hash */
+        .slide.first {
+            display: block
+        }
+    </style>
+</head>
+
+<body>
+    <div class="deck">
+        <section id="s1" class="slide first">
+            <span class="badge">Materi</span>
+            <h1>CSS Positioning & Backgrounds</h1>
+            <p>Kita bakal bahas <strong>positioning value</strong>, properti
+                <strong>position</strong> (top/right/bottom/left/clip), implementasi real,
+                dan seluruh <strong>background properties</strong> yang sering dipakai.
+            </p>
+            <ul>
+                <li>Position: <mark>static</mark>, <mark>relative</mark>,
+                    <mark>fixed</mark>, <mark>absolute</mark>, <mark>sticky</mark>
+                </li>
+                <li>Offsets: <code>top/right/bottom/left</code> + <code>clip</code></ 2 li>
+                <li>Backgrounds: color, image, size, clip, origin</li>
+            </ul>
+        </section>
+        <section id="s2" class="slide">
+            <h2>4) Positioning Value — Overview</h2>
+            <div class="grid">
+                <div class="card">
+                    <ul>
+                        <li><strong>static</strong>: default, elemen ikut alur dokumen,
+                            offset diabaikan</li>
+                        <li><strong>relative</strong>: tetap di flow, tapi bisa digeser
+                            pakai <code>top/right/bottom/left</code></li>
+                        <li><strong>absolute</strong>: keluar dari flow; diposisikan
+                            relatif ke <em>nearest positioned ancestor</em></li>
+                        <li><strong>fixed</strong>: nempel ke viewport (tetap saat
+                            scroll)</li>
+                        <li><strong>sticky</strong>: hybrid relative + fixed (menempel
+                            setelah melewati threshold)</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <pre><code>.static { position: static; }
+.relative { position: relative; top: 8px; left: 8px; }
+.absolute { position: absolute; top: 12px; right: 12px; }
+.fixed { position: fixed; bottom: 16px; right: 16px; }
+.sticky { position: sticky; top: 0; }</code></pre>
+                </div>
+            </div>
+        </section>
+        <section id="s3" class="slide">
+            <h2>5) Position Property — Offsets & Clip</h2>
+            <div class="two">
+                <div class="card">
+                    <h3>Offsets</h3>
+                    <ul>
+                        <li><code>top</code>, <code>right</code>, <code>bottom</code>,
+                            <code>left</code> bekerja kalau <code>position ≠ static</code>
+                        </li>
+                        <li>Absolute: referensi ke ancestor yang diposisikan (relative/
+                            absolute/fixed)</li>
+                        <li>Fixed: referensi ke viewport</li>
+                    </ul>
+                    <h3 style="margin-top:10px">Clip</h3>
+                    <p><code>clip</code> (deprecated) diganti <code>clip-path</code>.
+                        Tapi untuk materi klasik: <code>clip: rect(t,r,b,l)</code> di elemen <code>position:
+absolute</code>.</p>
+                </div>
+                <div class="card">
+                    <pre><code>.avatar-badge{
+3
+ position:absolute; top:-6px; right:-6px;
+}
+.fixed-help{
+ position:fixed; bottom:20px; right:20px;
+}
+/* Legacy */
+.crop { position:absolute; clip: rect(0, 120px, 120px, 0); }</code></pre>
+                </div>
+            </div>
+        </section>
+        <section id="s4" class="slide">
+            <h2>6) Implementasi Positioning</h2>
+            <div class="grid">
+                <div class="card">
+                    <strong>Sticky Header</strong>
+                    <pre><code>header{ position: sticky; top: 0; backdrop-filter:
+blur(6px); }</code></pre>
+                    <strong>Card Badge (Absolute)</strong>
+                    <pre><code>.card{ position: relative; }
+.card .badge{ position:absolute; top:8px; right:8px; }</code></pre>
+                </div>
+                <div class="card">
+                    <strong>CTA Fixed</strong>
+                    <pre><code>.cta-float{ position: fixed; right:16px; bottom:16px; }
+</code></pre>
+                    <div class="demo-area">
+                        <div class="box">Demo Area — letakkan elemen absolute di pojok
+                            kanan atas</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="s5" class="slide">
+            <h2>7) Background Property</h2>
+            <div class="grid">
+                <div class="card">
+                    <ul>
+                        <li><code>background-color</code></li>
+                        <li><code>background-image</code> (+ multiple)
+                            <pre><code>background-image: url(hero.jpg), lineargradient(#0008,#0000);</code></pre>
+                        </li>
+                        <li><code>background-repeat</code>, <code>background-position</
+code>, <code>background-size</code></li>
+                        <li><code>background-attachment</code> (scroll/fixed/local)</li>
+                        <li><code>background-clip</code>, <code>background-origin</
+code></li>
+<li>Shorthand: <code>background: color image position / size
+repeat origin clip attachment;</code></li>
+                        4
+                    </ul>
+                </div>
+                <div class="card">
+                    <pre><code>.hero{
+ background: #0b1220 url('img/pattern.svg') center/cover no-repeat fixed;
+}</code></pre>
+                </div>
+            </div>
+        </section>
+        <section id="s6" class="slide">
+            <h2>8) CSS Background Color</h2>
+            <div class="two">
+                <div class="card">
+                    <p>Atur warna latar elemen, bisa dipadukan dengan gradient.</p>
+                    <pre><code>.pill{ background-color:#111827; }
+.btn{ background-image: linear-gradient(90deg, #22d3ee, #a78bfa); }</code></
+pre>
+</div>
+<div class="card">
+<div class="demo-area" style="background:lineargradient(90deg,#22d3ee,#a78bfa)">Gradient demo</div>
+</div>
+</div>
+</section>
+<section id="s7" class="slide">
+<h2>9) Background Image</h2>
+<div class="grid">
+<div class="card">
+<pre><code>.banner{
+ background-image:url('img/hero.jpg');
+ background-repeat:no-repeat; /* or repeat-x */
+ background-position:center 20%;
+}
+/* Multiple layers */
+.banner.overlay{
+ background-image: linear-gradient(#0008,#0002), url('img/hero.jpg');
+}</code></pre>
+                </div>
+                <div class="card">
+                    <div class="demo-area" style="background:url('https://
+picsum.photos/600/300?blur=1') center/cover no-repeat;">Image demo</div>
+                </div>
+            </div>
+        </section>
+        <section id="s8" class="slide">
+            <h2>10) Background Size</h2>
+            <div class="grid">
+                <div class="card">
+                    5
+                    <ul>
+                        <li><code>auto</code>: ukuran asli</li>
+                        <li><code>cover</code>: isi penuh, potong sisi yang berlebih</li>
+                        <li><code>contain</code>: seluruh gambar terlihat, bisa ada
+                            letterbox</li>
+                        <li>Shorthand: <code>background: ... center / cover ...</code></ li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <pre><code>.cover{ background-size: cover; }
+.contain{ background-size: contain; }</code></pre>
+                </div>
+            </div>
+        </section>
+        <section id="s9" class="slide">
+            <h2>11) Background Clip & Origin</h2>
+            <div class="grid">
+                <div class="card">
+                    <p><strong>background-clip</strong>: area pemotongan background.</ p>
+                    <ul>
+                        <li><code>border-box</code> (default)</li>
+                        <li><code>padding-box</code></li>
+                        <li><code>content-box</code></li>
+                        <li>Bonus: <code>text</code> (WebKit) → efek teks bertekstur</li>
+                    </ul>
+                    <p style="margin-top:8px"><strong>background-origin</strong>: titik
+                        referensi
+                        <code>border-box | padding-box | content-box</code>
+                    </p>
+                </div>
+                <div class="card">
+                    <pre><code>.chip{ background-clip: padding-box; }
+.hero-text{
+ -webkit-background-clip: text;
+ color: transparent;
+ background-image: linear-gradient(90deg,#22d3ee,#a78bfa);
+}</code></pre>
+                </div>
+            </div>
+        </section>
+        <section id="s10" class="slide">
+            <h2>Recap + Tips</h2>
+            <ul>
+                <li>Gunakan <strong>relative</strong> di parent saat butuh child
+                    <strong>absolute</strong>
+                </li>
+                <li><strong>Sticky</strong> butuh threshold <code>top</code></li>
+                <li>Optimalkan gambar (size & format) untuk background</li>
+                <li>Untuk cropping modern pakai <code>clip-path</code></li>
+                6
+            </ul>
+        </section>
+        <section id="s11" class="slide">
+            <h2>Latihan Terkait</h2>
+            <p>Cek berkas <code>practice.html</code> + buat styling di
+                <code>style.css</code>. Target: header sticky, tombol fixed, badge absolute,
+                hero pakai background image (cover), dan main grid rapi.
+            </p>
+        </section>
+    </div>
+    <nav class="nav">
+        <a href="#s1">1</a><a href="#s2">2</a><a href="#s3">3</a><a href="#s4">4</a><a href="#s5">5</a>
+        <a href="#s6">6</a><a href="#s7">7</a><a href="#s8">8</a><a href="#s9">9</a><a href="#s10">10</a><a
+            href="#s11">11</a>
+        <a class="secondary" href="#s1">Awal</a>
+    </nav>
+</body>
+
+</html>

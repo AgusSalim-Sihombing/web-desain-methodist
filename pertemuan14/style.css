@@ -1,0 +1,34 @@
+div.statik{
+    border: 2px solid blue;
+    left: 40px;
+    top: 40px;
+    position: static;
+    padding: 20px;
+}
+
+div.relativ{
+    border: 2px solid red;
+    position: relative;
+    top: 10px;
+    left: 40px;
+}
+
+/* div.fixed{
+    border: 2px solid green;
+    height: 100px;
+    width: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+    font-size: 20px;
+} */
+
+div.sticky{
+    border: 2px solid rgb(1, 62, 1);
+    background-color: aquamarine;
+    position: sticky;
+    bottom: 0;
+    top: 0;
+    padding: 10px;
+}
