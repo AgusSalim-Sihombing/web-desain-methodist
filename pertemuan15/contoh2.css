@@ -1,0 +1,26 @@
+body{
+    background-image: url("https://img.freepik.com/foto-premium/wallpaper-gambar-estetik_1134901-183854.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.header{
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 50px;
+    text-align: center;
+}
+
+.content{
+    color: white;
+    display: flex;
+    left: 50px;
+    position: relative;
+}
+
+.contoh-gambar{
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKuzxu_UL5cEJYOvLJKiiGVE7ONQORm6EYiw&s");
+    width: 500px;
+    height: 700px;
+    border-radius: 10px;
+}

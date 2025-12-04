@@ -1,0 +1,48 @@
+img {
+    width: 100%;
+    height: auto;
+    opacity: 0.8;
+}
+
+.top-left {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
+
+.bottom-left {
+    bottom: 50px;
+    left: 20px;
+    position: absolute;
+}
+
+.top-right{
+    top: 10px;
+    right: 20px;
+    position: absolute;
+}
+
+.bottom-right{
+    bottom: 10px;
+    right: 20px;
+    position: absolute;
+}
+
+.center{
+    font-size: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.container {
+    position: relative;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+}
+
+/* body{
+            background-image: url("https://id.changiairport.com/content/dam/cag-id/travel-journal/idca/kota-terindah-di-dunia/Taipei%20-%20Taiwan.jpg");
+            background-size: cover;
+        } */
